@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\TutorsController;
+use App\Http\Controllers\TutorController;
 
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -19,3 +20,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/list', [TutorsController::class, 'list'])->name('list');
 
+Route::get('/show/{id}', [TutorController::class, 'show'])->name('show');
+ 

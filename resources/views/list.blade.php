@@ -12,9 +12,11 @@
         <h1> LISTA </h1>
         <div>
         @foreach($tutors as $tutor)
+            {{$loop->iteration}}
             {{$tutor->name}}
             {{$tutor->rating}}
             {{$tutor->education}}
+            <a href="{{ route('show', ['id' => $tutor->id]) }}">Szczegóły</a>
             <br>
 
         @endforeach

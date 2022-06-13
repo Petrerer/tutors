@@ -6,8 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DB;
 
-use App\Services\Tutors\TutorsService;
-
 
 class TutorsController extends Controller
 {
@@ -17,3 +15,4 @@ class TutorsController extends Controller
         return view("list", ["tutors"=>$tutors]);
     }
 }
+ 
