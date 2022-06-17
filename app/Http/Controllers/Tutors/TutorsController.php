@@ -19,9 +19,16 @@ class TutorsController extends Controller
         $this->tutorsService = $tutorsService;
     }
     
-    public function list()
+    public function list(Request $request)
     {
-        $tutors=DB::select('select * from tutors');
+        $name = $request->get('name');
+        $email = $request->get('email');
+        $phone_number = $request->get('phone_number');
+        $subject = $request->get('subject');
+        $rating = $request->get('rating');
+        $education = $request->get('education');
+        $experience = $request->get('experience');
+        $tutors= $this->tutorsService->list($name,$email,$phone_number,$subject,$rating,$education,$experience);
         return view('tutors/list', ["tutors"=>$tutors]);
     }
 }

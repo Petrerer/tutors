@@ -4,6 +4,7 @@
 use App\Http\Controllers\Tutors\TutorsController;
 use App\Http\Controllers\Tutors\TutorController;
 use App\Http\Controllers\Tutors\MailController;
+use App\Http\Controllers\Tutors\HomePageController;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
@@ -31,4 +32,4 @@ Route::group(['prefix' => '/tutors/', 'as' => 'tutors.'], function(){
     Route::get('show/{id}', [TutorController::class, 'show'])->name('show');
 });
 
-Route::get('/{any}', [TutorsController::class, 'tutors.list'])->where('any','.*');
+Route::get('/{any}', [HomePageController::class, 'homePage'])->where('any','.*');
